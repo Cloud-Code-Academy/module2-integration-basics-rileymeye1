@@ -1,6 +1,6 @@
 public with sharing class DummyJSONCallout {
 
-	@future(callout=true)
+	@future(callout=true) // Bulk method for Triggers
 	public static void processContactsUserIds(Set<String> dummyJSONUserIds) {
 		for (String dummyUserId : dummyJSONUserIds) {
 			getDummyJSONUserFromId(dummyUserId);
@@ -50,7 +50,7 @@ public with sharing class DummyJSONCallout {
 		return newContact;
 	}
 
-	@future(callout=true)
+	@future(callout=true) // Bulk method for Triggers
 	public static void createDummyJSONUserFromContId(Set<Id> contactIds) {
 		for (Id contactId : contactIds) {
 			postCreateDummyJSONUser(contactId);
